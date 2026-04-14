@@ -6,6 +6,8 @@ use App\Http\Controllers\LaptopController3;
 require __DIR__.'/auth.php';
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/laptop/theloai/{id}', [HomeController::class, 'theoDanhMuc']);
+Route::post('/timkiem', [HomeController::class, 'timKiem']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
