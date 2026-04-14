@@ -1,5 +1,9 @@
 <x-laptop-layout :title="$title" :categories="$categories">
-
+@if(session('success'))
+    <div class="alert alert-success text-center mt-3">
+        {{ session('success') }}
+    </div>
+@endif
 <div class="row mt-4">
 
     <!-- Hình -->
