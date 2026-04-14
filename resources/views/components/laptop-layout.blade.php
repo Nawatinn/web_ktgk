@@ -125,10 +125,11 @@
                         </ul>
                     </div>
                     <div class="search-bar">
-                        <form method="post" action="{{url('/timkiem')}}">
-                            {{ csrf_field() }}
-                            <input type="text" name="keyword" placeholder="Tìm kiếm laptop...">
-                            <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <form method="GET" action="{{ url('/timkiem') }}">
+                            <input type="text" name="keyword" placeholder="Tìm kiếm laptop..." value="{{ request('keyword') }}">
+                            <button class="search-btn">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
                         </form>
                     </div>
                     <div style='color:white;position:relative' class='mr-2'>
@@ -152,9 +153,10 @@
                                 {{ Auth::user()->name }}
                                 </button>
                                 <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Quản lý</a>
+                                <a href="{{ route('laptoplist') }}" class="dropdown-item">
+                                    Quản lý
+                                </a>
                                 <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
 <a class="dropdown-item" onclick="event.preventDefault();
                                                         this.closest('form').submit();">Đăng xuất</a>
                                 </form>

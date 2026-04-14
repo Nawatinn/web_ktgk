@@ -152,8 +152,8 @@
 
                     <td>
                         <div class="d-flex gap-1">
-                            <a href="{{ route('laptopdetail',$row->id) }}" 
-                               class="btn btn-primary btn-sm w-50">
+                            <a href="{{ route('laptop.show', $row->id) }}" 
+                            class="btn btn-primary btn-sm w-50">
                                 Xem
                             </a>
 
