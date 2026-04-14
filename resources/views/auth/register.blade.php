@@ -1,6 +1,12 @@
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
+         <div class="flex justify-center mb-4">
+                <a href="/">
+                    <!--<x-application-logo class="w-20 h-20 fill-current text-gray-500" />-->
+                    <img src="{{ asset('images/logo-hub.PNG') }}" width="300px">
+                </a>
+            </div>
 
         <!-- Name -->
         <div>
