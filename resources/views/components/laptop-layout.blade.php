@@ -107,19 +107,6 @@
             display:grid;
             grid-template-columns:repeat(2,30% 70%);
         }
-.btn-sort {
-            padding: 5px 12px;
-            margin: 0 5px;
-            border: 1px solid #ccc;
-            background: #f8f9fa;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 13px;
-        }
-
-        .btn-sort:hover {
-            background: #e2e6ea;
-        }
     </style>
 </head>
 <body>

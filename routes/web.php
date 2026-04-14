@@ -24,3 +24,9 @@ Route::middleware('auth')->group(function () {
 
 });
 
+require __DIR__.'/auth.php';
+
+Route::get('/laptop/list', 'App\Http\Controllers\LaptopController2@laptoplist')->name('laptoplist');
+Route::post('/laptop/delete', 'App\Http\Controllers\LaptopController2@laptopdelete')->name('laptopdelete');
+Route::get('/laptop/detail/{id}', 'App\Http\Controllers\LaptopController2@laptopdetail')->name('laptopdetail');
+

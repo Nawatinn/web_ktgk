@@ -16,7 +16,7 @@ class MovieLayout extends Component
     public function __construct()
     {
         //
-        $this->genre = DB::table("genre")->get();
+        $this->genre = DB::table("danh_muc_laptop")->get();
     }
 
     /**
