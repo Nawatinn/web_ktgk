@@ -62,13 +62,21 @@ class HomeController extends Controller
     }
 
 
-    public function timKiem(Request $request)
+        public function timKiem(Request $request)
     {
         $keyword = $request->keyword;
 
-        $laptops = DB::table('san_pham')
-            ->where('tieu_de', 'like', '%' . $keyword . '%')
-            ->get();
+        $query = DB::table('san_pham')
+            ->where('tieu_de', 'like', '%' . $keyword . '%');
+        if ($request->sort == 'asc') {
+            $query->orderBy('gia', 'asc');
+        } elseif ($request->sort == 'desc') {
+            $query->orderBy('gia', 'desc');
+        } else {
+            $query->orderBy('created_at');
+        }
+
+        $laptops = $query->get();
 
         $categories = DB::table('danh_muc_laptop')->get();
 
